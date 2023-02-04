@@ -21,7 +21,7 @@ const Posts = () => {
           Posts
         </Typography>
       </Grid>
-      <Grid item container spacing={2}>
+      <Grid item container direction="column" spacing={2}>
         {postsLoading ? <CircularProgress sx={{pl: 2}}/> : posts.map(post => (
           <PostItem key={post.id} title={post.title} createdAt={post.createdAt} image={post.image} id={post.id}/>
         ))}

@@ -29,3 +29,4 @@ create table comments
             on delete cascade
 );
 INSERT INTO news.comments (post_id, author, text) VALUES (1, '', 'It is awesome post!');
+INSERT INTO news.comments (post_id, author, text) VALUES (2, 'Someone', 'I\'m scared!');

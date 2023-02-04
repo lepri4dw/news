@@ -14,3 +14,12 @@ export interface PostMutation {
   content: string;
   image: File | null;
 }
+
+export interface Comment {
+  id: number;
+  post_id: number;
+  author: string;
+  text: string;
+}
+
+export type CommentMutation = Omit<Comment, 'id'>;

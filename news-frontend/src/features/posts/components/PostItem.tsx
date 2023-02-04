@@ -28,7 +28,7 @@ const MessageItem: React.FC<Props> = ({title, createdAt, image, id}) => {
   };
 
   return (
-    <Grid item xs={12} sm={12} md={6} sx={{height: '100%'}}>
+    <Grid item style={{height: '100%', width: '60%'}}>
       <Card>
        <Grid container>
           <Grid item xs={3} sx={{p: 2}}>

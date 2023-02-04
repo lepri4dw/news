@@ -37,7 +37,7 @@ const PostForm = () => {
       ...prevState, [name]: files && files[0] ? files[0] : null,
     }));
   };
-  console.log(2);
+
   return (
     <form autoComplete="off" onSubmit={submitFormHandler} style={{margin: '0 16px'}}>
       <Grid container direction="column" spacing={2}>
@@ -46,7 +46,7 @@ const PostForm = () => {
             id="title" label="Title"
             value={state.title}
             onChange={inputChangeHandler}
-            name="title"
+            name="title" required
           />
         </Grid>
         <Grid item xs>
@@ -54,7 +54,7 @@ const PostForm = () => {
             id="content" label="Content"
             value={state.content}
             onChange={inputChangeHandler}
-            name="content" multiline rows={4}
+            name="content" multiline rows={4} required
           />
         </Grid>
         <Grid item xs>
