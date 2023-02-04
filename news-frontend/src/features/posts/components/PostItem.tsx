@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { deletePost, fetchPosts } from '../postsThunks';
 import { LoadingButton } from '@mui/lab';
 import { selectPostsDeleting } from '../postsSlice';
+import {Link} from "react-router-dom";
 
 interface Props {
   title: string;
@@ -37,7 +38,7 @@ const MessageItem: React.FC<Props> = ({title, createdAt, image, id}) => {
             <Typography variant='h5'>{title}</Typography>
             <Grid container sx={{marginTop: 'auto'}}>
               <Typography sx={{mt: 1}}>at {dayjs(createdAt).format('DD.MM.YYYY HH:mm:ss')}</Typography>
-              <Button endIcon={<ArrowForwardIcon/>}>Read Full Post</Button>
+              <Link to={'/posts/' + id}><Button endIcon={<ArrowForwardIcon/>}>Read Full Post</Button></Link>
               <LoadingButton variant="outlined" loading={id === deleteLoading} loadingPosition="start" startIcon={<DeleteIcon/>} onClick={onDelete}>Delete</LoadingButton>
             </Grid>
           </Grid>
